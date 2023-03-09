@@ -71,6 +71,7 @@ func (serv *UploadServer) registerTusHandlers(r *gin.Engine, store *shardedfiles
 		NotifyCreatedUploads:    true,
 		NotifyTerminatedUploads: true,
 		NotifyUploadProgress:    true,
+		RespectForwardedHeaders: true,
 	}
 
 	routePrefix, err := routePrefixFromBasePath(serv.cfg.Server.BasePath)
